@@ -1,12 +1,15 @@
 using System;
 
-public class Program03
+namespace curso_frontend
 {
-	public static void Main()
-	{
-		// lee un dato de la consola
-		Console.Write("Dame un dato: ");
-		string texto=Console.ReadLine();
-		Console.WriteLine(texto);
-	}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Lee un dato de la consola
+            Console.Write("Dame un dato: ");
+            string texto = Console.ReadLine();
+            Console.WriteLine(texto);
+        }
+    }
 }
