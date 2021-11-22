@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imagen {
+            height: auto;
+            width: 200px;
+        }
+
+        .imagen-small {
+            height: auto;
+            width: 50px;
+        }
+
+        body {
+            /* background-image: url("img/paisaje.jpg"); */
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>hola1</p>
+    <p>hola2</p>
+    <ul>
+        <li>Galletas</li>
+        <li>Chocolate</li>
+        <li>Helados</li>
+    </ul>
+    <ol>
+        <li>Galletas</li>
+        <li>Chocolate</li>
+        <li>Helados</li>
+    </ol>
+    <img class="imagen" src="img/paisaje.jpg" alt="Paisaje">
+    <table border="1">
+        <tr>
+            <td>dato1</td>
+            <td>dato2</td>
+        </tr>
+        <tr>
+            <td>dato3</td>
+            <td>dato4</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>
+                <img class="imagen-small" src="img/barcelona.png" alt="Barcelona">
+            </td>
+            <td>
+                <img class="imagen-small" src="img/racing.png" alt="Racing">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="imagen-small" src="img/america_cali.png" alt="América de Cali">
+            </td>
+            <td>
+                <img class="imagen-small" src="img/bayern.png" alt="Bayern">
+            </td>
+        </tr>
+    </table>
+    <form action="get">
+        <p>
+            Nombre:
+            <input type="text" name="nombre" id="nombre">
+        </p>
+        <p>
+            <input type="checkbox" name="informatico" id="informatico">
+            Informático
+        </p>
+        <p>
+            <input type="radio" name="lenguaje" id="lenguaje" value="csharp">C#
+        </p>
+        <p>
+            <input type="radio" name="lenguaje" id="lenguaje" value="java">Java
+        </p>
+        <p>
+            <input type="radio" name="lenguaje" id="lenguaje" value="python">Python
+        </p>
+        <p>
+            <select name="ciudad" id="ciudad">
+                <option value="santander">Santander</option>
+                <option value="bilbao">Bilbao</option>
+                <option value="oviedo">Oviedo</option>
+            </select>
+        </p>
+        <textarea name="sugerencias" id="sugerencias" cols="80" rows="10"></textarea>
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
+    </form>
+</body>
+
+</html>
