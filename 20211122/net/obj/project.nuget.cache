@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UEPpNWpmoDYnvqwz66tFPSLchhqsQKqPLep2XOKSJViV9dXT+v9Rn9G3SO3YWg3lNywXkO/9ExgXIsBs7SDsGg==",
+  "success": true,
+  "projectFilePath": "/home/miguel/Proyectos/Cursos/curso_frontend/20211122/net/net.csproj",
+  "expectedPackageFiles": [
+    "/home/miguel/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.0/microsoft.aspnetcore.app.ref.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
