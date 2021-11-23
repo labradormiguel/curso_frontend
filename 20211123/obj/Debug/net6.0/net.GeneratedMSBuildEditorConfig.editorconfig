@@ -1,0 +1,88 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = net
+build_property.RootNamespace = net
+build_property.ProjectDir = /home/miguel/Proyectos/Cursos/curso_frontend/20211123/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/miguel/Proyectos/Cursos/curso_frontend/20211123
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Factura/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFjdHVyYS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Factura/VerFactura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFjdHVyYS9WZXJGYWN0dXJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/CienNumeros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DaWVuTnVtZXJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Gb3JtdWxhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/Mensaje.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9NZW5zYWplLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/Sumar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TdW1hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/VerNota.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WZXJOb3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Home/VerSuma.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WZXJTdW1hLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Persona/FormularioPersona.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYS9Gb3JtdWxhcmlvUGVyc29uYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Persona/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Persona/RecibirDatos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYS9SZWNpYmlyRGF0b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/miguel/Proyectos/Cursos/curso_frontend/20211123/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ceaouncand
