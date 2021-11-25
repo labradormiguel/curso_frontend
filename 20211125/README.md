@@ -1,24 +1,7 @@
-Hemos creado un listado de facturas en Index, desde ahí se puede acceder
-al formulario (que se ha movido a una nueva vista) y al detalle de cada
-factura a través de links.
+Terminado Detalle.cshtml en Views / Factura.
 
-- Añadidos placeholders al formulario
-- Añadido legend y fieldset
-- Añadidos radiochecks para el tipo de IVA
-- Añadido checkbox para saber si está pagada o no
+Añadido enlace en el Index para borrar una factura.
 
-Añadida carpeta Repositorios en Models
+Cambiados todos los enlaces con rutas relativas por rutas absolutas para que no de problemas con las urls al pasar de una página a otra.
 
-- Añadido FacturaRepositorio.cs
-
-Models/Factura.cs
-
-- Añadido string TipoIVA
-- Añadido bool Pagada
-- Añadidos dos constructores, uno con parámetros y otro sin
-
-Controllers/FacturaController.cs
-
-- Añadido tipoIVA al constructor
-- Añadido pagada al constructor
-- Añadido ListaFacturas() (using net.Models.Repositorios;)
+Añadido un ejercicio muy parecido pero con teléfonos, tienen Marca, Modelo y Precio.

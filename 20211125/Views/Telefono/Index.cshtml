@@ -1,0 +1,46 @@
+﻿<html>
+    <head>
+        <style>
+            table, th, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            table{
+                width:100%;
+            }
+            td{
+                text-align: center;
+            }
+            th{
+                background-color: black;
+                color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio</th>
+                    <th>Borrar</th>
+                </tr>
+            @foreach (var telefono in ViewBag.ListaTelefonos)
+            {
+                <tr>
+                    <td>@telefono.ID</td>
+                    <td>@telefono.Marca</td>
+                    <td>@telefono.Modelo</td>
+                    <td>@telefono.Precio €</td>
+                    <td><a href="/Telefono/Borrar?id=@telefono.ID">Borrar</a></td>
+                </tr>
+            }
+            </table>
+        </div>
+        <p>
+            <a href="/Telefono/Formulario">Ir al formulario</a>
+        </p>
+    </body>
+</html>

@@ -16298,6 +16298,11 @@
   "RootNamespace": "net",
   "Documents": [
     {
+      "FilePath": "/home/miguel/Proyectos/Cursos/curso_frontend/20211125/Views/Telefono/Index.cshtml",
+      "TargetPath": "Views\\Telefono\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/miguel/Proyectos/Cursos/curso_frontend/20211125/Views/Factura/Formulario.cshtml",
       "TargetPath": "Views\\Factura\\Formulario.cshtml",
       "FileKind": "mvc"
@@ -16380,6 +16385,11 @@
     {
       "FilePath": "/home/miguel/Proyectos/Cursos/curso_frontend/20211125/Views/Persona/RecibirDatos.cshtml",
       "TargetPath": "Views\\Persona\\RecibirDatos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/miguel/Proyectos/Cursos/curso_frontend/20211125/Views/Telefono/Formulario.cshtml",
+      "TargetPath": "Views\\Telefono\\Formulario.cshtml",
       "FileKind": "mvc"
     },
     {
