@@ -1,0 +1,48 @@
+﻿<html>
+    <head>
+        <style>
+            table, th, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            table{
+                width:100%;
+            }
+            td{
+                text-align: center;
+            }
+            th{
+                background-color: black;
+                color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Número</th>
+                    <th>Concepto</th>
+                    <th>Importe</th>
+                    <th>Ver detalle</th>
+                    <th>Borrar</th>
+                    <!--<th>Tipo IVA</th>
+                    <th>Pagada</th>-->
+                </tr>
+            @foreach (var factura in ViewBag.ListaFacturas)
+            {
+                <tr>
+                    <td>@factura.Numero</td>
+                    <td>@factura.Nombre</td>
+                    <td>@factura.Importe €</td>
+                    <td><a href="/Factura/Detalle?numero=@factura.Numero">Ir a detalle</a></td>
+                    <td><a href="/Factura/Borrar?numero=@factura.Numero">Borrar</a></td>
+                </tr>
+            }
+            </table>
+        </div>
+        <p>
+            <a href="/Factura/Formulario">Ir al formulario</a>
+        </p>
+    </body>
+</html>

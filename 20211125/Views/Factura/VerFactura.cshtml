@@ -1,0 +1,23 @@
+<table border=1>
+    <tr>
+        <th>Nº</th>
+        <th>Concepto</th>
+        <th>Importe</th>
+        <th>Tipo IVA</th>
+        <th>Pagada</th>
+    </tr>
+    <tr>
+
+        <td style="text-align: center;">@ViewBag.Numero</td>
+        <td style="text-align: center;">@ViewBag.Nombre</td>
+        <td style="text-align: center;">@ViewBag.Importe €</td>
+        <td style="text-align: center;">@ViewBag.TipoIVA</td>
+        <td style="text-align: center;">
+            @if(@ViewBag.Pagada==true){
+                <span>Está pagada</span>
+            }else{
+                <span>Sin pagar</span>
+            }
+            </td>
+    </tr>
+</table>

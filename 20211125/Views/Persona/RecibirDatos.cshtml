@@ -1,0 +1,10 @@
+﻿<p>@ViewBag.nombre tiene <strong>@ViewBag.edad</strong> años</p>
+@if(@ViewBag.edad < 65 && @ViewBag.jubilado == true){
+    <p>Está prejubilado.</p>
+}else if(@ViewBag.edad >= 65 && @ViewBag.jubilado == true){
+    <p>Está jubilado.</p>
+}else if(@ViewBag.edad >= 65 && ViewBag.jubilado == false){
+    <p>Debería estar jubilado.</p>
+}else{
+    <p>No está jubilado.</p>
+}

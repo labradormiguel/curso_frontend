@@ -1,0 +1,44 @@
+<head>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Número</td>
+        <td>@ViewBag.Factura.Numero</td>
+    </tr>
+    <tr>
+        <td>Concepto</td>
+        <td>@ViewBag.Factura.Nombre</td>
+    </tr>
+    <tr>
+        <td>Importe</td>
+        <td>@ViewBag.Factura.Importe</td>
+    </tr>
+    <tr>
+        <td>Tipo IVA</td>
+        <td>@ViewBag.Factura.TipoIVA</td>
+    </tr>
+    <tr>
+        <td>Pagada</td>
+        <td>
+            @if(@ViewBag.Factura.Pagada==true){
+                <span>Está pagada</span>
+            }else{
+                <span>Sin pagar</span>
+            }
+        </td>
+        
+    </tr>
+</table>
+
+<p><a href="/Factura">Volver</a></p>
+</body>
