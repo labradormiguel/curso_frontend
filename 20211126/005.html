@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0.5em 1em;
+        font-size: 2em;
+      }
+
+      td {
+        font-size: 1.4em;
+      }
+
+      .apellidos {
+        font-weight: bold;
+      }
+
+      .edad {
+        text-align: right;
+      }
+      .nombre,
+      .apellidos {
+        text-align: center;
+      }
+      table caption {
+        font-size: 2.5em;
+      }
+      tbody {
+        background-color: #cce6ff;
+      }
+      thead {
+        background-color: #4da6ff;
+      }
+      tfoot {
+        background-color: #9999ff;
+      }
+    </style>
+    <title>005</title>
+  </head>
+
+  <body>
+    <table>
+      <caption>Tabla con datos de persona</caption>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nombre">Pepe</td>
+          <td class="apellidos">Pérez</td>
+          <td class="edad">20</td>
+        </tr>
+        <tr>
+          <td class="nombre">Ana</td>
+          <td class="apellidos">Gómez</td>
+          <td class="edad">30</td>
+        </tr>
+        <tr>
+          <td class="nombre">María</td>
+          <td class="apellidos">Blanco</td>
+          <td class="edad">15</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>vacío</td>
+          <td>vacío</td>
+          <td>25</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

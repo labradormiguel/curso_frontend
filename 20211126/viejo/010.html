@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .divisor1 {
+        background-color: khaki;
+        padding: 10px;
+        font-size: 2em;
+      }
+      .divisor2 {
+        background-color: mediumpurple;
+        padding: 20px;
+        font-size: 3em;
+      }
+      p.nuevos {
+        color: white;
+      }
+      div + p {
+        color: red;
+      }
+      .divisor1>p:first-child{
+          color: seagreen;
+      }
+    </style>
+    <title>010</title>
+  </head>
+
+  <body>
+    <div class="divisor1">
+      <p>hola que tal</p>
+      <p class="nuevos">hola que tal</p>
+      <p>hola que tal</p>
+    </div>
+    <p>Esto va en rojo</p>
+    <div class="divisor2">
+      <p>hola que tal 2</p>
+      <p class="nuevos">hola que tal 2</p>
+      <p>hola que tal 2</p>
+    </div>
+  </body>
+</html>
