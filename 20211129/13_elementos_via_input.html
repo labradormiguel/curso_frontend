@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>013</title>
+    <script type="text/javascript">
+        function nuevo() {
+            var inputnumero = document.getElementById("minumero");
+            //alert(inputnumero.value);
+            var parrafo = document.createElement("p");
+            //parrafo.innerText=inputnumero.value;
+            parrafo.innerHTML="<ul><li>"+inputnumero.value+"</li></ul>";
+            var cuerpo = document.getElementById("cuerpo");
+            cuerpo.appendChild(parrafo);
+        }
+    </script>
+</head>
+
+<body id="cuerpo">
+    <p>
+        <input type="text" name="numero" id="minumero" />
+        <input type="button" value="Nuevo" onclick="nuevo()" />
+    </p>
+</body>
+
+</html>

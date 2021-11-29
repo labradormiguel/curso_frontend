@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>010</title>
+    <script type="text/javascript">
+        //var numero1 = parseInt(prompt("Escribe un número:"));
+        //var numero2 = parseInt(prompt("Escribe otro número:"));
+        function mas(){
+            //alert(numero1 + numero2);
+            var texto = document.getElementById("numero");
+            var numero = parseInt(texto.innerText);
+            numero++;
+            texto.innerHTML=numero;
+        }
+        function menos(){
+            //alert(numero1 - numero2);
+            var texto = document.getElementById("numero");
+            var numero = parseInt(texto.innerText);
+            numero--;
+            texto.innerHTML=numero;
+        }
+    </script>
+    <style>
+        input[type="button"]{
+            width: 25px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="numero">
+        1
+    </p>
+    <p>
+        <input type="button" value="+" onclick="mas()" />
+    </p>
+    <p>
+        <input type="button" value="-" onclick="menos()" />
+    </p>
+</body>
+
+</html>

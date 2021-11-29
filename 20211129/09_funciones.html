@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>009</title>
+    <script type="text/javascript">
+        // Mostrar texto al pulsar el botón
+        /*function pulsaste() {
+            alert("Has pulsado");
+        }*/
+
+        // Mostrar contenido del párrafo
+        function pulsaste() {
+            var parrafo = document.getElementById("miparrafo");
+            // log muestra el código del párrafo tal cual
+            // console.log(parrafo);
+            // dir muestra todas las propiedades del objeto
+            // console.dir(parrafo);
+            // con la propiedad innerText lo afinamos
+            console.dir(parrafo.innerText);
+            // se le puede cambiar el valor
+            parrafo.innerText = "Hemos cambiado las cosas";
+            console.dir(parrafo.innerText);
+        }
+    </script>
+</head>
+
+<body>
+    <p id="miparrafo">
+        Hola, soy un párrafo
+    </p>
+    <p>
+        <input type="button" value="Aceptar" onclick="pulsaste()" />
+    </p>
+</body>
+
+</html>

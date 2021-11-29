@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>012</title>
+    <script type="text/javascript">
+        function nuevo() {
+            var imagen = document.createElement("img");
+            imagen.setAttribute("src","img/barcelona.png");
+            var cuerpo = document.getElementById("cuerpo");
+            cuerpo.appendChild(imagen);
+        }
+    </script>
+</head>
+
+<body id="cuerpo">
+    <p>
+        <input type="button" value="Nuevo" onclick="nuevo()" />
+    </p>
+</body>
+
+</html>
