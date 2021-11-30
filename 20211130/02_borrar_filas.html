@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>016</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        td:hover {
+            background-color: burlywood;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        function pulsaste() {
+            //alert("pulsaste");
+            // Mostrar la celda pulsada
+            //console.log(event.target.innerText);
+
+            var mitd = event.target;
+            var padre = mitd.parentNode; //con parentNode nos muestra el <tr>
+            //console.log(padre);
+            padre.remove();
+        }
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td onclick="pulsaste(event)">hola1</td>
+            <td onclick="pulsaste(event)">hola2</td>
+        </tr>
+        <tr>
+            <td onclick="pulsaste(event)">hola3</td>
+            <td onclick="pulsaste(event)">hola4</td>
+        </tr>
+        <tr>
+            <td onclick="pulsaste(event)">hola5</td>
+            <td onclick="pulsaste(event)">hola6</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

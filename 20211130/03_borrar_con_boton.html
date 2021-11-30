@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>017</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        input[type="button"]:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        function borrar() {
+
+            // Queremos borrar la fila entera pulsando un botón
+
+            var input = event.target;
+            // el input es hijo de td e hijo de tr
+            var tr = input.parentNode.parentNode;
+            tr.remove();
+        }
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>hola1</td>
+            <td>hola2</td>
+            <td>
+                <input type="button" value="Borrar" onclick="borrar()">
+            </td>
+        </tr>
+        <tr>
+            <td>hola3</td>
+            <td>hola4</td>
+            <td>
+                <input type="button" value="Borrar" onclick="borrar()">
+            </td>
+        </tr>
+        <tr>
+            <td>hola5</td>
+            <td>hola6</td>
+            <td>
+                <input type="button" value="Borrar" onclick="borrar()">
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

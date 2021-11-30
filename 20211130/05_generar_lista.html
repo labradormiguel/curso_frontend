@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>019</title>
+    <script type="text/javascript">
+        function generar() {
+            var ul = document.createElement("ul");
+            var li1 = document.createElement("li");
+            var valor1 = document.getElementById("nombre1").value;
+            var texto1 = document.createTextNode(valor1);
+
+            var li2 = document.createElement("li");
+            var valor2 = document.getElementById("nombre2").value;
+            var texto2 = document.createTextNode(valor2);
+
+            li1.appendChild(texto1);
+            li2.appendChild(texto2);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+
+            var body = document.getElementById("body");
+            body.appendChild(ul);
+
+            /*var td = document.createElement("td");
+            tr.appendChild(td);
+
+            var valor = document.getElementById("nombre").value;
+            var nombre = document.createTextNode(valor);
+            td.appendChild(nombre);*/
+        }
+    </script>
+</head>
+
+<body id="body">
+    <!-- un botón genera un ul con 2 li -->
+    <label for="valor1">Valor 1: </label>
+    <input type="text" name="valor1" id="nombre1">
+    <label for="valor1">Valor 2: </label>
+    <input type="text" name="valor2" id="nombre2">
+    <p>
+        <input type="button" value="Añadir" onclick="generar()">
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>018</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+
+        input[type="button"]:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+        }
+
+        #tabla {
+            width: 50%;
+        }
+    </style>
+    <script type="text/javascript">
+        function generar() {
+            var table = document.getElementById("lista_nombres");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+
+            var td = document.createElement("td");
+            tr.appendChild(td);
+
+            var valor = document.getElementById("nombre").value;
+            var nombre = document.createTextNode(valor);
+            td.appendChild(nombre);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="tabla">
+        <!-- tabla con nombres y un formulario que añade nuevas filas -->
+        <table id="lista_nombres">
+            <tr>
+                <th>
+                    Nombres
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div id="formulario">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre">
+        <p>
+            <input type="button" value="Añadir" onclick="generar()">
+        </p>
+    </div>
+</body>
+
+</html>

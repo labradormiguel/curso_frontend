@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+
+        input[type="button"]:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+
+        #tabla {
+            width: 80%;
+        }
+    </style>
+    <script type="text/javascript">
+        function generar() {
+            var table = document.getElementById("lista_nombres");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+
+            var td1 = document.createElement("td");
+            tr.appendChild(td1);
+            var td2 = document.createElement("td");
+            tr.appendChild(td2);
+
+            var valor1 = document.getElementById("nombre").value;
+            var nombre = document.createTextNode(valor1);
+            td1.appendChild(nombre);
+
+            var valor2 = document.getElementById("apellido").value;
+            var apellido = document.createTextNode(valor2);
+            td2.appendChild(apellido);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="tabla">
+        <!-- tabla con nombres y un formulario que añade nuevas filas -->
+        <table id="lista_nombres">
+            <tr>
+                <th>
+                    Nombres
+                </th>
+                <th>
+                    Apellidos
+                </th>
+            </tr>
+        </table>
+    </div>
+    <table id="formulario">
+        <tr>
+            <td>
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre">
+            </td>
+            <td>
+                <label for="apellido">Apellido: </label>
+                <input type="text" name="apellido" id="apellido">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Añadir" onclick="generar()">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
