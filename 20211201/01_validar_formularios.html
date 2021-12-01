@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>021</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+
+        input[type="button"]:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+    </style>
+    <script type="text/javascript">
+        function validarNombreCaja(event) {
+
+            if (event.target.value != "") {
+                var errorNombre = document.getElementById("errornombre");
+                errorNombre.style.backgroundColor = "#FFFFFF";
+            }
+
+        }
+
+        function validarEdadCaja(event) {
+
+            if (event.target.value != "") {
+                var errorEdad = document.getElementById("erroredad");
+                errorEdad.style.backgroundColor = "#FFFFFF";
+            }
+
+        }
+
+        function validar() {
+
+            var nombre = document.getElementById("nombre").value;
+            var edad = document.getElementById("edad").value;
+
+            if (nombre != "" && edad != "") {
+
+                alert("todo ok");
+                return true;
+            } else {
+                if (nombre == "" && edad != "") {
+                    var errorNombre = document.getElementById("errornombre");
+                    errorNombre.style.backgroundColor = "#CD5C5C";
+                    alert("Falta el nombre");
+
+                } else if (edad == "" && nombre != "") {
+                    var errorEdad = document.getElementById("erroredad");
+                    errorEdad.style.backgroundColor = "#CD5C5C";
+                    alert("Falta la edad");
+
+                } else if (nombre == "" && edad == "") {
+                    var errorNombre = document.getElementById("errornombre");
+                    var errorEdad = document.getElementById("erroredad");
+                    errorNombre.style.backgroundColor = "#CD5C5C";
+                    errorEdad.style.backgroundColor = "#CD5C5C";
+                    alert("Falta el nombre\nFalta la edad");
+
+                }
+                return false;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="destino" onsubmit="return validar()">
+        <table id="formulario">
+            <tr>
+                <td id="errornombre">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" onkeyup="validarNombreCaja(event)">
+                </td>
+                <td id="erroredad">
+                    <label for="edad">Edad: </label>
+                    <input type="text" name="edad" id="edad" onkeyup="validarEdadCaja(event)">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
