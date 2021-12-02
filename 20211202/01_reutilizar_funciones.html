@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>022</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        function validarCajaNoVacia(idcaja) {
+
+            var eCaja = document.getElementById(idcaja);
+            
+            if (eCaja.value != "") {
+                return true; // la caja no está vacía
+            } else {
+                return false;
+            }
+
+        }
+
+        // Compactamos en una sola función los dos mensajes de error
+        // para poder reutilizarla
+        function mostrarErrorCaja(idcaja, iderror) {
+
+            // con %o sale el resultado resaltado entre comillas y en rojo
+            //console.log("nombre caja %o",idcaja);
+            //console.log("nombre error %o",iderror);
+
+            var eError = document.getElementById(iderror);
+            
+            if (validarCajaNoVacia(idcaja)) {
+
+                eError.style.backgroundColor = "#FFFFFF";
+            } else {
+
+                eError.style.backgroundColor = "#CD5C5C";
+            }
+        }
+
+        function validarNombreCaja(event) {
+
+            mostrarErrorCaja("nombre", "errornombre");
+
+        }
+
+        function validarEdadCaja(event) {
+
+            mostrarErrorCaja("edad", "erroredad");
+
+        }
+
+        function validar() {
+
+            var nombre = document.getElementById("nombre").value;
+            var edad = document.getElementById("edad").value;
+
+            if (validarCajaNoVacia("nombre") && validarCajaNoVacia("edad")) {
+
+                alert("todo ok");
+                return true;
+                
+            } else {
+
+                mostrarErrorCaja("nombre","errornombre");
+                mostrarErrorCaja("edad","erroredad");
+
+                return false;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="destino" onsubmit="return validar()">
+        <table id="formulario">
+            <tr>
+                <td id="errornombre">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" onkeyup="validarNombreCaja(event)">
+                </td>
+                <td id="erroredad">
+                    <label for="edad">Edad: </label>
+                    <input type="text" name="edad" id="edad" onkeyup="validarEdadCaja(event)">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

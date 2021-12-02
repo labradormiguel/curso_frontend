@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26</title>
+    <script>
+        function contar() {
+            var numero = parseInt(document.getElementById("numero").value);
+            var lista = [];
+
+            for (let i = 0; i < numero; i++) {
+                lista.push(i);
+                console.log(lista[i]);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- introducir un número en input e imprimir todos los números
+    hasta él en la consola -->
+    <input type="text" name="numero" id="numero">
+    <input type="button" value="Enviar" onclick="contar()">
+</body>
+
+</html>

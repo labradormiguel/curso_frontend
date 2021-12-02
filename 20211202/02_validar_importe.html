@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>023</title>
+    <link rel="stylesheet" href="formulario.css">
+    <script src="validadores.js"></script>
+    <script src="formateadores.js"></script>
+    <script type="text/javascript">
+        // numero concepto importe
+        // que no esten vacíos y el importe tiene que ser mayor de 100€
+
+        function validarNumeroCaja(event) {
+
+            mostrarErrorCaja("numero", "errornumero","#80b3ff");
+
+        }
+
+        function validarConceptoCaja(event) {
+
+            mostrarErrorCaja("concepto", "errorconcepto","#ffcc80");
+
+        }
+
+        function validarImporteCaja(event) {
+
+            
+            while(importe<100){
+            console.log(errorimporte);}
+            mostrarErrorCaja("importe", "errorimporte","#ff8080");
+
+        }
+
+        function validar() {
+
+            var numero = document.getElementById("numero").value;
+            var concepto = document.getElementById("concepto").value;
+            var importe = document.getElementById("importe").value;
+
+            if (validarCajaNoVacia("numero") &&
+                validarCajaNoVacia("concepto") &&
+                validarCajaNoVacia("importe") &&
+                validarImporteMinimo("importe",100)) {
+
+                alert("todo ok");
+                return true;
+
+            } else {
+
+                mostrarErrorCaja("numero", "errornumero", "#80b3ff");
+                mostrarErrorCaja("concepto", "errorconcepto", "#ffcc80");
+                mostrarErrorCaja("importe", "errorimporte", "#ff8080");
+
+                return false;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="destino" onsubmit="return validar()">
+        <table id="formulario">
+            <tr>
+                <td id="errornumero">
+                    <label for="numero">Número: </label>
+                    <input type="text" name="numero" id="numero" onkeyup="validarNumeroCaja(event)">
+                </td>
+                <td id="errorconcepto">
+                    <label for="concepto">Concepto: </label>
+                    <input type="text" name="concepto" id="concepto" onkeyup="validarConceptoCaja(event)">
+                </td>
+                <td id="errorimporte">
+                    <label for="importe">Importe: </label>
+                    <input type="text" name="importe" id="importe" min="100" onkeyup="validarImporteCaja(event)">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

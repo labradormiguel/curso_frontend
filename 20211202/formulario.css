@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: lightgray;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
