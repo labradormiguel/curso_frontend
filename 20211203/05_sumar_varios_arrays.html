@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31</title>
+    <script>
+        //sumar los elementos de todos los arrays
+
+        function pulsar() {
+
+            var notas = [[4, 27], [12, 11]];
+            var suma = 0;
+
+            for (let i = 0; i < notas.length; i++) {
+
+                for (let j = 0; j < notas[i].length; j++) {
+
+                    suma = suma + notas[i][j];
+
+                }
+
+            }
+
+            console.log(suma);
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="button" value="Enviar" onclick="pulsar()">
+
+</body>
+
+</html>

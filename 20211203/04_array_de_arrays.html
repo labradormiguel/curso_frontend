@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30</title>
+    <script>
+        //recorrer un array con arrays dentro
+
+        function pulsar() {
+
+            var notas = [[4, 27], [12, 11]];
+
+            for (let i = 0; i < notas.length; i++) {
+
+                console.log("Array", i + 1);
+
+                for (let j = 0; j < notas[i].length; j++) {
+
+                    console.log(notas[i][j]);
+
+                }
+
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="button" value="Enviar" onclick="pulsar()">
+
+</body>
+
+</html>

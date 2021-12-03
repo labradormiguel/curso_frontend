@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28</title>
+    <script>
+        var mayor = 0;
+        var nombre = "";
+        
+        function pulsar() {
+
+            var texto = document.getElementById("texto").value;
+            var lista=[];
+
+            
+            lista.push(texto);
+
+            for (var i = 0; i < lista.length; i++) {
+                
+                console.log("Añadido %o",lista[i]);
+                console.log("Longitud %o",lista[i].length);
+                console.log("Mayor anterior %o",mayor);
+
+                if (mayor < lista[i].length){
+                    mayor = lista[i].length;
+                    nombre = lista[i];
+                }
+               
+            }
+            console.log("El más largo es "+nombre+", tiene "+mayor+" letras");
+            
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="texto" id="texto" minlength="1">
+    <input type="button" value="Enviar" onclick="pulsar()">
+    <table>
+        <tr>
+            <td id="campeon"></td>
+            <td id="mayor"></td>
+        </tr>
+        <tr id="listaNombres"></tr>
+    </table>
+</body>
+
+</html>

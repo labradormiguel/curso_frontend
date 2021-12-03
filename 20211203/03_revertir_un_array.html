@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29</title>
+    <script>
+        // revertir un array
+        // declarar un array con números
+        // declaramos otro vacío
+        // recorremos el primero desde el final hasta el principio
+        // añadimos los elementos al nuevo array
+
+        function pulsar() {
+
+            var lista1 = [1, 2, 3, 4, 6, 10];
+            var lista2 = [];
+
+            for (var i = lista1.length-1; i >= 0; i--) {
+
+                lista2.push(lista1[i]);
+            }
+            
+            console.log("lista1 %o",lista1);
+            console.log("********");
+            console.log("lista2 %o",lista2);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <input type="button" value="Enviar" onclick="pulsar()">
+
+</body>
+
+</html>
