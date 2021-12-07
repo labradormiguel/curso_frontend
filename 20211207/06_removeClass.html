@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>006</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+
+        .mas {
+            font-size: 20px;
+        }
+
+        .verdana {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("input").click(function (e) {
+                $("p").removeClass();
+                $("p").addClass(e.target.id);
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="mas" id="mas" />
+    <input type="button" value="azul" id="azul" />
+    <input type="button" value="verdana" id="verdana" />
+    <p>
+        hola
+    </p>
+    <p>
+        hola
+    </p>
+    <p>
+        hola
+    </p>
+</body>
+
+</html>

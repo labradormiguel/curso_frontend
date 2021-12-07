@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>002</title>
+    <script>
+
+        window.onload = function () {
+
+            // obtengo por nombre de etiqueta todos los botones
+            var botones = document.getElementsByTagName("input");
+
+            for (boton of botones) {
+                boton.onclick = pulsar;
+            }
+
+        }
+
+        function pulsar() {
+
+            alert("hola");
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <!-- los botones ya no necesitan el evento onclick,
+    la ventaja del JavaScript no intrusivo es que el código
+    HTML queda totalmente separado del JavaScript -->
+
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+</body>
+
+</html>

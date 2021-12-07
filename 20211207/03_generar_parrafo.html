@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>003</title>
+    <script>
+
+        window.onload = function () {
+
+            var botones = document.getElementsByTagName("input");
+
+            for (boton of botones) {
+                boton.onclick = pulsar;
+            }
+
+        }
+
+        function pulsar() {
+
+            // Se le pasa el número para sabre a qué body nos estamos
+            // refiriendo, a pesar de que solo haya uno.
+            // Esto sigue siendo JavaScript puro, aún no hay jQuery
+            let body = document.getElementsByTagName("body")[0];
+            let parrafo = document.createElement("p");
+            let texto = document.createTextNode("Has pulsado");
+            parrafo.appendChild(texto);
+            body.appendChild(parrafo);
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+</body>
+
+</html>

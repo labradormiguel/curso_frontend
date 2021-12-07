@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de tablas</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            height: 25px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .azul {
+            border: 2px solid blue;
+        }
+
+        .rojo {
+            border: 2px solid red;
+        }
+
+        .verde {
+            border: 2px solid green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="controles">
+        <p>
+            <input type="button" value="Borrar tabla" onclick="$('table').empty()">
+            <input type="button" value="Restaurar tabla"
+                onclick="$('table').html('<tr><td></td><td></td><td></td><td></td></tr>')">
+        </p>
+        <p>
+            <input type="button" value="Añadir filas" onclick="$('table').append($('table tr:last-child').clone())" />
+            <input type="button" value="Quitar filas" onclick="$('table tr:last-child').remove()" />
+            <input type="button" value="Añadir columnas" onclick="$('table tr').append('<td></td>');">
+            <input type="button" value="Quitar columnas" onclick="$('table tr > td:last-child').remove();">
+        </p>
+        <p>
+            <input type="button" value="Bordes negros"
+                onclick="$('table td').removeClass('rojo').removeClass('verde').removeClass('azul');">
+            <input type="button" value="Bordes azules" onclick="$('table td').addClass('azul');">
+            <input type="button" value="Bordes rojos" onclick="$('table td').addClass('rojo');">
+            <input type="button" value="Bordes verdes" onclick="$('table td').addClass('verde');">
+        </p>
+    </div>
+    <div id="tabla">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

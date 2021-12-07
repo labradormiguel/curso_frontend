@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>004</title>
+    <!-- Necesitamos importar la librería para operar con ella -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // $() es una función a la que le pasamos elementos y los
+        // convierte en objetos complejos con propiedades propias
+        // de jQuery
+
+        // La función ready solo se ejecuta cuando la página ha terminado
+        // de cargar por completo, hasta la última etiqueta de HTML
+
+        $(document).ready(function () {
+            $("input").click(pulsar);
+        });
+
+        function pulsar() {
+
+            // Esto es mucho más sencillo y directo que lo del ejercicio anterior
+
+            $("body").append("<p>Has pulsado</p>");
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+    <input type="button" value="Pulsar" />
+</body>
+
+</html>
