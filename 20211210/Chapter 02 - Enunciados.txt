@@ -1,0 +1,21 @@
+Tema 2
+
+- Ex 1: Si tuvieramos dos o más tablas con colisiones de nombre, necesitaríamos un alias para cada una de ellas. 
+	Asigna un alias a la tabla
+	
+	SELECT shipperid, companyname, phone
+	FROM Sales.Shippers;
+
+- Ex 2: Asigna el alias Phone number a phone
+
+	
+	SELECT S.shipperid, companyname, phone AS phone number
+	FROM Sales.Shippers AS S;
+
+__________________________
+
+- Ex 1: Proyecta el código de empleado, nombre completo (concatenando firstname and lastname), y el año de nacimiento 
+
+- Ex 2: Calcula el último día del mes en curso y el último día del año en curso
+
+- Ex 3: Genera una consulta que muestre el código de producto, y el código de producto formateado a 10 posiciones ( 1 -> 0000000001 )

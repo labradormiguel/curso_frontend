@@ -1,0 +1,26 @@
+Tema 3
+
+- Ex 1: Mostar pedidos pendientes de enviar (shippeddate nulo)
+
+- Ex 2: Mostrar los pedidos recogidos entre el 11 de febrero de 2008 y el 12 de febrero de 2008 (orderdate)
+
+___________
+
+- Ex 1: Pedidos del cliente 77, ordenados por shipperid
+
+- Ex 2: En la consulta anterior, está garantizado el orden de los registros?
+
+	Y si añadimos shippeddate para los desempates?
+	
+	Cómo podríamos garantizarlo?
+
+____
+
+- Ex 1: Los 5 productos más caros de la categoría "Bebidas" (Beverages) ordenado de más caro a más barato
+	
+	Es determinista?
+
+	Convertirla en una consulta deterministra (dos formas con empates, o rompiendo empates)
+
+- Ex 2: Tres consultas que devuelva los productos de 5 en 5 ( 1 - 5, 6 - 10, 11 - 15)
+
