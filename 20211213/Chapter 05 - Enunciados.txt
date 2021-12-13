@@ -1,0 +1,27 @@
+Tema 5
+
+- Ex 1: Calcula el número de pedidos para cada cliente español
+
+	Añade el nombre de la ciudad al resultado
+
+- Ex 2: Añade el total (gran total) de pedidos como una fila más (Recuerda las funciones multi-grupo)
+
+______________
+
+
+- Ex 1: Escribe una query que retorne para cada año y código de transportista, el último envío realizado (utiliza la tabla sales.orders)
+
+	Pivota la tabla, de manera que tenga una fila para cada año y una columna para cada transportista, mostrando el último envío como dato
+
+- Ex 2: Escribe una query que tenga código de cliente en las filas, código de transportista en las columnas, y el número de pedidos como dato (Ojo!! Pivot no soporta COUNT(*), trata de crear una columna ficticia con '1's)
+
+
+______________
+
+- Ex 1: Revisa la consulta sales.orderValues
+	
+	Escribe una consulta que para cada cliente y pedido, calcule la media movil de los tres últimos pedidos (recuerda la función avg para calcular medias)
+
+- Ex 2: Muestras los tres pedidos con mayor volumen de carga (freight) para cada transportista ( usa row_number )
+
+	Para cada pedido, calcula la diferente con el pedido anterior y posterior de dicho cliente

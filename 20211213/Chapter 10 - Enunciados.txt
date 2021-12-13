@@ -1,0 +1,12 @@
+Tema 10
+
+
+Ex 1 - Revisa la salida del comando: EXEC sp_describe_first_result_set N'SELECT * FROM Sales.Customers;';
+
+	Especialmente las columnas
+
+	Crea una tabla Sales.MyCustomers similar a Sales.Customers, salvo que custid sea un INT en vez de IDENTITY
+
+	Inserta en MyCustomers todos los clientes de Cusomer que no han realizado ningún pedido ( recuerda WHERE NOT EXISTS ... )
+
+Ex 2 - Crea la tabla sales.mycustomers similar a la anterior pero utilizando SELECT ... INTO ...

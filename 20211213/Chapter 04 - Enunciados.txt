@@ -1,0 +1,31 @@
+Tema 4
+
+- Ex 1: Devolver los cliente y sus pedidos ( no es necesario mostrar clients sin pedidos )
+
+- Ex 2: Incluir en la consulta anterior los cliente sin pedidos
+
+	Mostrar únicamente los clientes que no han comprado nada
+
+	Mostrar todos los clientes, y sus pedidos, siempre y cuando los mismos sean de Febrero de 2008
+
+________________
+
+- Ex 1: Una query que devuelva el precio más bajo de cada categoría
+	
+	Usando la query anterior como CTE, devolver los productos con dicho precio más bajo 
+
+- Ex 2: Una función que recibe el identificador de proveedor ( @supplierid ) y un número ( @n ) y devuleve los n productos más baratos de dicho proveedor 
+
+	Pruébala con los 2 productos del proveedor 1
+
+	Utilizando la función anterior, una query que devuelva de cada proveedor de Japan, los dos productos más baratos ( CROSS APPLY )
+
+	Igual que el paso anterior per mostrando todos los proveedores de Japan
+
+_________________
+
+- Ex 1: Listar los empleados que han recogidos pedidos para el cliente 1 y ninguno para el 2
+
+	Listar los empleados que han recogidos algún pedido para el cliente 1 y algún pedido para el cliente 2
+
+	Empleados que han recogido pedidos para cliente 1 y cliente 2, en ese orden ( el pedido del cliente 1 es anterior al del cliente 2)
