@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // array con 4 imagenes, botones que cuando pulsas te cambia una imagen
+        // por la otra
+
+        imagenes = ["./img/imagen1.jpg", "./img/imagen2.jpg", 
+        "./img/imagen3.jpg", "./img/imagen4.jpg"]
+
+        $(document).ready(function () {
+
+            //  imagen por defecto
+            let i = 0;
+            $("#imagen").attr("src", imagenes[i]);
+
+            $("#atras").click(function () {
+
+                    i--;
+                    if (i == 0){
+                        i = imagenes.length;
+                    }
+                    $("#imagen").attr("src", imagenes[i]);
+
+            })
+
+            $("#adelante").click(function () {
+
+                    i++;
+                    if (i == imagenes.length){
+                        i = 0;
+                    }
+                    $("#imagen").attr("src", imagenes[i]);
+
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <img id="imagen" width="200px" height="115" />
+    <p>
+        <input type="button" name="atras" id="atras" value="<">
+        <input type="button" name="adelante" id="adelante" value=">">
+    </p>
+</body>
+
+</html>

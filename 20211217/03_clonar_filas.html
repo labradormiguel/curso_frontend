@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>014</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("table").on("click", ".duplicar", function () {
+                // con "on" nos aseguramos de que funcionen los botones
+                // que se han generado después de cargarse la página
+                let boton = $(this);
+
+                let tr = boton.parent().parent();
+                //tr.after("<tr>"+tr.html()+"</tr>");
+                tr.after(tr.clone());
+
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Pedro</td>
+            <td>5</td>
+            <td><input type="button" value="Duplicar" class="duplicar"></td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>7</td>
+            <td><input type="button" value="Duplicar" class="duplicar"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
