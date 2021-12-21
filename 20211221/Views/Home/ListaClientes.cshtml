@@ -1,0 +1,42 @@
+<script>
+    $(document).ready(function () {
+
+        $("#nombre").keyup(function () {
+            console.log($(this).val());
+
+            $.getJSON("/home/ListaClientesJSON?nombre=" +
+                $(this).val(), function (datos) {
+                    console.log(datos);
+                    $("#mitabla").empty();
+                    $("#mitabla").append(
+                        "<tr><th>DNI</th><th>Nombre</th><th>Apellido</th></tr>"
+                    )
+                    for (let i = 0; i < datos.length; i++) {
+                        $("#mitabla").append("<tr><td>" + datos[i].dni
+                            + "</td><td>" + datos[i].nombre + "</td><td>" +
+                            datos[i].apellido + "</td></tr>");
+                    }
+                })
+        }
+        )
+    })
+</script>
+<p>
+    <input type="text" name="filtro" id="nombre" />
+</p>
+<table id="mitabla">
+    <tr>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+    </tr>
+    @foreach (var cliente in ViewBag.listaclientes)
+    {
+        <tr>
+            <td>@cliente.Dni</td>
+            <td>@cliente.Nombre</td>
+            <td>@cliente.Apellido</td>
+        </tr>
+    }
+</table>
+

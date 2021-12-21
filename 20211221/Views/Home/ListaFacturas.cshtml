@@ -1,0 +1,63 @@
+<script>
+    $(document).ready(function () {
+
+        $("#boton").click(function () {
+
+            $.getJSON("/home/listafacturasjson", function (datos) {
+                $("#mitabla2").append(
+                    "<tr><th>Número</th><th>Concepto</th><th>Importe</th></tr>"
+                )
+                for (let i = 0; i < datos.length; i++) {
+                    $("#mitabla2").append(
+                        "<tr><td>" + datos[i].numero + "</td><td>"
+                        + datos[i].concepto + "</td><td>"
+                        + datos[i].importe + "</td></tr>"
+                    )
+                }
+
+            })
+        });
+
+        $("#filtroconcepto").keyup(function () {
+            console.log($(this).val());
+
+            $.getJSON("/home/ListaFacturasPorConcepto?concepto=" +
+                $(this).val(), function (datos) {
+                    console.log(datos);
+                    $("#mitabla2").empty();
+                    for (let i = 0; i < datos.length; i++) {
+                        $("#mitabla2").append("<tr><td>" + datos[i].numero
+                            + "</td><td>" + datos[i].concepto + "</td><td>" +
+                            datos[i].importe + "</td></tr>");
+                    }
+                })
+        }
+        )
+    })
+</script>
+
+<table id="mitabla">
+    <tr>
+        <th>Número</th>
+        <th>Concepto</th>
+        <th>Importe</th>
+    </tr>
+    @foreach (var factura in ViewBag.listafacturas)
+    {
+        <tr>
+            <td>@factura.Numero</td>
+            <td>@factura.Concepto</td>
+            <td>@factura.Importe</td>
+        </tr>
+    }
+</table>
+<hr>
+<p>
+<input type="text" name="filtro" id="filtroconcepto" />
+</p>
+<table id="mitabla2">
+
+</table>
+<p>
+<input type="button" value="Aceptar" id="boton" />
+</p>
