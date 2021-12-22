@@ -1,0 +1,50 @@
+<script src="~/js/clientes.js"></script>
+
+<p>
+    <input type="text" name="filtro" id="nombre" />
+</p>
+<table id="mitabla">
+    <tr>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>
+            <input type="checkbox" name="check" id="check">
+        </th>
+    </tr>
+    @foreach (var cliente in ViewBag.listaclientes)
+    {
+        <tr>
+            <td>@cliente.Dni</td>
+            <td>@cliente.Nombre</td>
+            <td>@cliente.Apellido</td>
+            <td style="justify-content: center;">
+                <input type="checkbox" name="check" id="check">
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+<div>
+    <button id="botonInsertar">
+        Insertar
+    </button>
+    <button id="botonEditar">
+        Editar
+    </button>
+    <button id="botonBorrar">
+        Borrar
+    </button>
+    <p>
+        <button id="botonCancelar">
+            Cancelar
+        </button>
+    </p>
+</div>
+<div id="formulario"></div>
+</p>
+<h3>Formularios</h3>
+<a href="/Home/Formulario">Insertar</a>
+<a href="/Home/FormularioEditar">Editar</a>
+<a href="/Home/FormularioBorrar">Borrar</a>
