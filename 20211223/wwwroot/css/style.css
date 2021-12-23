@@ -1,0 +1,64 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th:not(:last-of-type) {
+    width: 32%;
+}
+
+th:last-of-type{
+    width: 4%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#botonInsertar, #botonEditar, #botonBorrar, #botonCancelar {
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 80px;
+}
+
+#botonInsertar {
+    background-color: #3fa159;
+}
+
+#botonEditar {
+    background-color: #e3b059;
+}
+
+#botonBorrar {
+    background-color: #c95430;
+}
+
+#botonCancelar {
+    margin-top: 10px;
+    background-color: #c95430;
+}
+
+.ins {
+    border: none;
+    outline: none;
+}
+
+#mitabla th:last-of-type {
+    text-align: center;
+}
+
+#mitabla td:last-of-type {
+    text-align: center;
+}
+
+#mitabla th:not(:last-of-type) {
+    padding-left: 5px;
+}
+
+#mitabla td:not(:last-of-type) {
+    padding-left: 5px;
+}
