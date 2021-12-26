@@ -11,7 +11,7 @@ $(document).ready(function () {
                     <td>${datos[i].dni}</td>
                     <td>${datos[i].nombre}</td>
                     <td>${datos[i].apellido}</td>
-                    <td style="justify-content: center;">
+                    <td>
                         <input type="checkbox" name="check" id="check">
                     </td>
                 </tr>`
@@ -22,23 +22,37 @@ $(document).ready(function () {
 
     $("#nombre").focus();
 
-    /*     $("#nombre").keyup(function () {
-            console.log($(this).val());
-    
-            $.getJSON("/home/ListaClientesJSON?nombre=" +
-                $(this).val(), function (datos) {
-                    console.log(datos);
-                    $("#mitabla").empty();
+    $("#nombre").keyup(function () {
+
+        $.getJSON("/home/ListaClientesJSON?nombre=" +
+            $(this).val(), function (datos) {
+
+                $("#mitabla").empty();
+                $("#mitabla").append(
+                    `<tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>
+                            <input type='checkbox' name='masscheck'
+                             class='masscheck' />
+                        </th>
+                    </tr>`);
+
+                for (let i = 0; i < datos.length; i++) {
                     $("#mitabla").append(
-                        "<tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th><input type='checkbox' name='masscheck' class='masscheck' /></th></tr>"
-                    )
-                    for (let i = 0; i < datos.length; i++) {
-                        $("#mitabla").append("<tr><td>" + datos[i].dni
-                            + "</td><td>" + datos[i].nombre + "</td><td>" +
-                            datos[i].apellido + "</td><td><input type='checkbox' name='check' class='check' /></td></tr>");
-                    }
-                })
-        }) */
+                        `<tr>
+                            <td>${datos[i].dni}</td>
+                            <td>${datos[i].nombre}</td>
+                            <td>${datos[i].apellido}</td>
+                            <td>
+                                <input type='checkbox' name='check'
+                                 class='check' />
+                            </td>
+                        </tr>`);
+                }
+            })
+    })
 
     $("#botonInsertar").click(function () {
 
@@ -104,6 +118,7 @@ $(document).ready(function () {
     })
 
     $("#buttonIns").click(function () {
+        
         var cliente = {};
         cliente.dni = $("#dniIns").val();
         cliente.nombre = $("#nombreIns").val();
@@ -129,24 +144,20 @@ $(document).ready(function () {
 
     })
 
-
-
-
-
 });
 
 function buscarTodos() {
     $.getJSON("/home/listaclientesjson", function (datos) {
         for (let i = 0; i < datos.length; i++) {
-            $("#mitabla").append(`<tr>
-                                            <td>${datos[i].dni}</td>
-                                            <td>${datos[i].nombre}</td>
-                                            <td>${datos[i].apellido}</td>
-                                            <td style="justify-content: center;">
+            $("#mitabla").append(
+                `<tr>
+                    <td>${datos[i].dni}</td>
+                    <td>${datos[i].nombre}</td>
+                    <td>${datos[i].apellido}</td>
+                    <td>
                         <input type="checkbox" name="check" id="check">
                     </td>
-
-                                            </tr>`);
+                </tr>`);
         }
     })
 }
