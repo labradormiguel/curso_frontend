@@ -12,7 +12,11 @@ $(document).ready(function () {
                     <td>${datos[i].nombre}</td>
                     <td>${datos[i].apellido}</td>
                     <td>
-                        <input type="checkbox" name="check" id="check">
+                        <a href="" onclick="borrar(${datos[i].dni});
+                        return false;">❌</a>
+                    </td>
+                    <td>
+                        📂
                     </td>
                 </tr>`
             )
@@ -34,8 +38,10 @@ $(document).ready(function () {
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>
-                            <input type='checkbox' name='masscheck'
-                             class='masscheck' />
+                            Borrar
+                        </th>
+                        <th>
+                            Editar
                         </th>
                     </tr>`);
 
@@ -46,8 +52,11 @@ $(document).ready(function () {
                             <td>${datos[i].nombre}</td>
                             <td>${datos[i].apellido}</td>
                             <td>
-                                <input type='checkbox' name='check'
-                                 class='check' />
+                                <a href="" onclick="borrar(${datos[i].dni});
+                                return false;">❌</a>
+                            </td>
+                            <td>
+                                📂
                             </td>
                         </tr>`);
                 }
@@ -73,8 +82,15 @@ $(document).ready(function () {
                     <td><input type='text' name='apellido' class='ins'
                      placeholder='Introduce apellido' />
                     </td>
-                    <td>
+/*                     <td>
                         <input type='checkbox' name='check' class='check' />
+                    </td> */
+                    <td>
+                        <a href="" onclick="borrar(${datos[i].dni});
+                        return false;">❌</a>
+                    </td>
+                    <td>
+                        📂
                     </td>
                 </tr>`
             )
@@ -123,7 +139,7 @@ $(document).ready(function () {
         cliente.dni = $("#dniIns").val();
         cliente.nombre = $("#nombreIns").val();
         cliente.apellido = $("#apellidoIns").val();
-        console.log(cliente);
+        //console.log(cliente);
 
         $.ajax({
             url: "/home/insertarjson",
@@ -144,24 +160,46 @@ $(document).ready(function () {
 
     })
 
-    $("#dniSeleccionado").change(function(){
-        
-    })
-
 });
 
+function borrar(dni) {
+
+    $.ajax({
+        url: "/api/clientes" + dni,
+        type: "DELETE",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        error: function (response) {
+            alert(response.responseText);
+        },
+        success: function (response) {
+
+            $("#mitabla").empty()
+            buscarTodos();
+        }
+    });
+}
+
 function buscarTodos() {
-    $.getJSON("/home/listaclientesjson", function (datos) {
+    $.getJSON("/api/clientes", function (datos) {
+
         for (let i = 0; i < datos.length; i++) {
+
             $("#mitabla").append(
                 `<tr>
                     <td>${datos[i].dni}</td>
                     <td>${datos[i].nombre}</td>
                     <td>${datos[i].apellido}</td>
                     <td>
-                        <input type="checkbox" name="check" id="check">
+                        <a href="" onclick="borrar(${datos[i].dni});
+                        return false;">❌</a>
+                    </td>
+                    <td>
+                        📂
                     </td>
                 </tr>`);
         }
-    })
+    });
+
 }
+

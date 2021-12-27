@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#formularioinsertar").hide();
+        buscarTodos();
+
+        $("#botonNuevo").click(function () {
+
+            $("#listado").hide();
+            $("#formularioinsertar").show();
+        })
+
+        $("#botonInsertar").click(function () {
+
+            var factura = {};
+            factura.numero = $("#numero").val();
+            factura.concepto = $("#concepto").val();
+            factura.importe = $("#importe").val();
+            //console.log(factura);
+
+            // muy manual con jquery y ajax para enviar datos al servidor en json
+            $.ajax({
+                url: "/api/facturas",
+                type: "POST",
+                data: JSON.stringify(factura),
+                contentType: "application/json; charset=utf-8",
+                error: function (response) {
+                    console.dir(response);
+                },
+                success: function (response) {
+
+
+                    $("#listado").show();
+                    $("#formularioinsertar").hide();
+                    $("#mitabla").empty();
+                    buscarTodos();
+                }
+            });
+
+
+
+
+
+        })
+    });
+
+    function borrar(numero) {
+
+        $.ajax({
+            url: "/api/facturas/" + numero,
+            type: "DELETE",
+            contentType: "application/json; charset=utf-8",
+            error: function (response) {
+                alert(response.responseText);
+            },
+            success: function (response) {
+
+                $("#mitabla").empty();
+                buscarTodos();
+            }
+
+        });
+
+
+    }
+    function buscarTodos() {
+
+        $.getJSON("/api/facturas", function (datos) {
+
+            $("#mitabla").append(
+                `<tr>
+                    <th>Número</th>
+                    <th>Concepto</th>
+                    <th>Importe</th>
+                    <th>#</th>
+                </tr>`
+            )
+
+            for (let i = 0; i < datos.length; i++) {
+
+                $("#mitabla").append(
+                    `<tr>
+                        <td>${datos[i].numero}</td>
+                        <td>${datos[i].concepto}</td>
+                        <td>${datos[i].importe}</td>
+                        <td>
+                            <a href="" onclick="borrar(${datos[i].numero});return false;">❌</a>
+                        </td>
+                    </tr>`);
+            }
+        })
+
+    }
+
+
+</script>
+<div id="listado">
+    <table id="mitabla">
+
+    </table>
+
+    <input type="button" value="insertar" id="botonNuevo" />
+</div>
+<div id="formularioinsertar">
+    <form>
+
+        <p>
+            Numero<input type="text" name="numero" id="numero" />
+        </p>
+        <p>
+            Concepto<input type="text" name="concepto" id="concepto" />
+        </p>
+        <p>
+            Importe<input type="text" name="importe" id="importe" />
+        </p>
+        <p>
+            <input type="button" id="botonInsertar" value="aceptar" />
+        </p>
+    </form>
+</div>
+
+
+
+
+
+
+</div>

@@ -1,0 +1,60 @@
+<script src="~/js/clientes.js"></script>
+<div id="listado">
+    <p>
+        <input type="text" name="filtro" id="nombre" />
+    </p>
+    <table id="mitabla">
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>
+                Borrar
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </table>
+
+    <p>
+    <div>
+        <button id="botonInsertar">
+            Insertar
+        </button>
+        <button id="botonEditar">
+            Editar
+        </button>
+        <button id="botonBorrar">
+            Borrar
+        </button>
+        <button id="botonCancelar">
+            Cancelar
+        </button>
+    </div>
+</div>
+<div id="formulario">
+    @* <form action="/Home/Insertar"> *@
+    <p>
+    <div>DNI:</div><input type="text" name="dni" id="dniIns" /></p>
+    <p>
+    <div>Nombre:</div><input type="text" name="nombre" id="nombreIns" /></p>
+    <p>
+    <div>Apellido:</div><input type="text" name="apellido" id="apellidoIns" /></p>
+    <p><input type="button" value="Insertar" id="buttonIns" /></p>
+    @* </form> *@
+</div>
+</p>
+<h3>Formularios</h3>
+<p>
+<div><a href="" id="insertarForm">Insertar</a></div>
+<div><a href="/Home/Formulario">Insertar (form)</a></div>
+</p>
+<p>
+<div><a href="">Editar</a></div>
+<div><a href="/Home/FormularioEditar">Editar (form)</a></div>
+</p>
+<p>
+<div><a href="">Borrar</a></div>
+<div><a href="/Home/FormularioBorrar">Borrar (form)</a></div>
+</p>

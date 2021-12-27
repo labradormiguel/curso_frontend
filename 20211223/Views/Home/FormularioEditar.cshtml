@@ -1,10 +1,28 @@
+<script src="~/js/clientes.js"></script>
 <form action="/Home/Editar">
-<p><div>DNI:</div>
-<select name="dni" id="dni">
-    <option id="numeroDni">12345678-X</option>
-</select></p>
-<p><div>Nombre:</div><input type="text" name="nombre" /></p>
-<p><div>Apellido:</div><input type="text" name="apellido" /></p>
-<p><input type="submit" value="Editar" /></p>
-</form>
+    <p>
+    <div>DNI:</div>
+    <select name="seleccion" id="seleccion">
+        @foreach (var cliente in ViewBag.listaclientes)
+            {
+            <tr>
+                <option>@cliente.Dni</option>
+            </tr>
+            }
+    </select></p>
+    <div id="dniSeleccionado">
+    <p>
+    <div>DNI:</div><input type="text" name="dni" id="dni"  />
+    </p>
+    <p>
+    <div>Nombre:</div><input type="text" name="nombre" />
+    </p>
+    <p>
+    <div>Apellido:</div><input type="text" name="apellido" />
+    </p>
+    </div>
+    <p>
+        <input type="submit" value="Editar" />
+    </p>
 
+</form>

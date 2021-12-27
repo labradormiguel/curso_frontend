@@ -1,0 +1,39 @@
+<script>
+    $(document).ready(function () {
+
+        $("#boton").click(function () {
+
+            $.getJSON("/home/listapersonasjson", function (datos) {
+
+                for (let i = 0; i < datos.length; i++) {
+                    $("#mitabla").append(
+                        "<tr><td>" + datos[i].nombre + "</td><td>"
+                        + datos[i].apellidos + "</td></tr>"
+                    )
+                }
+
+            })
+        });
+    })
+</script>
+
+<table id="mitabla">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+    </tr>
+    @foreach (var persona in ViewBag.listapersonas)
+    {
+        <tr>
+            <td>@persona.Nombre</td>
+            <td>@persona.Apellidos</td>
+        </tr>
+    }
+</table>
+<p>
+    <input type="button" value="Aceptar" id="boton" />
+</p>
+<hr>
+<table id="mitabla2">
+
+</table>

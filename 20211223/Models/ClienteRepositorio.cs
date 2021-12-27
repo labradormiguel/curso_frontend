@@ -34,9 +34,11 @@ namespace mvc_ajax.Models
         public List<Cliente> BuscarTodasPorNombre(string nombre)
         {
 
-            string connectionString = "datasource=localhost;port=3306;username=root;password=;database=negocio;";
+            string connectionString =
+             "datasource=localhost;port=3306;username=root;password=;database=negocio;";
 
-            string query = "SELECT * FROM clientes WHERE nombre LIKE '%" +
+            string query =
+             "SELECT * FROM clientes WHERE nombre LIKE '%" +
              nombre + "%' OR apellido LIKE '%" + nombre + "%'";
 
             List<Cliente> lista = new List<Cliente>();
@@ -71,16 +73,35 @@ namespace mvc_ajax.Models
              "INSERT INTO `clientes`(`dni`, `nombre`, `apellido`) VALUES ('" + c.Dni +
              "','" + c.Nombre + "','" + c.Apellido + "');";
 
-
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             databaseConnection.Open();
-            commandDatabase.CommandText=query;
+            commandDatabase.CommandText = query;
             commandDatabase.ExecuteNonQuery();
 
             databaseConnection.Close();
 
         }
 
+        public void Editar(Cliente c)
+        {
+
+            string connectionString =
+             "datasource=localhost;port=3306;username=root;password=;database=negocio;";
+
+            string query =
+             //"UPDATE clientes SET dni = " + c.Dni + " , nombre = "
+             //+ c.Nombre + ", apellido = " + c.Apellido + " WHERE dni = " + c.Dni + ";";
+             "SELECT dni FROM clientes;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            databaseConnection.Open();
+            commandDatabase.CommandText = query;
+            commandDatabase.ExecuteNonQuery();
+
+            databaseConnection.Close();
+
+        }
     }
 }

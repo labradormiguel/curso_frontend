@@ -44,13 +44,13 @@ namespace mvc_ajax.Controllers
 
         public IActionResult ListaClientes(string nombre)
         {
-            //Console.WriteLine(nombre);
+            Console.WriteLine(nombre);
             if (nombre != null)
             {
 
                 ClienteRepositorio repo = new ClienteRepositorio();
                 List<Cliente> clientes = repo.BuscarTodasPorNombre(nombre);
-                Console.WriteLine(clientes.Count);
+                //Console.WriteLine(clientes.Count);
                 ViewBag.listaclientes = clientes;
 
                 return View();
@@ -67,19 +67,11 @@ namespace mvc_ajax.Controllers
 
         public IActionResult FormularioBorrar()
         {
-            ClienteRepositorio repo = new ClienteRepositorio();
-            //repo.Insertar(cliente);
-
-            ViewBag.listaclientes = repo.BuscarTodas();
             return View();
         }
 
         public IActionResult FormularioEditar()
         {
-            ClienteRepositorio repo = new ClienteRepositorio();
-            //repo.Editar(cliente);
-
-            ViewBag.listaclientes = repo.BuscarTodas();
             return View();
         }
 

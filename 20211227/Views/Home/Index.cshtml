@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+    $(document).ready(function () {
+
+        $("#boton").click(function () {
+
+            $.get("home/datos", function (texto){
+
+                $("#mitabla").append("<tr><td>"+texto+"</td></tr>");
+
+            })
+
+        })
+
+    })
+</script>
+
+<table id="mitabla">
+    <tr>
+        <th>Textos</th>
+    </tr>
+    @foreach (var texto in ViewBag.textos)
+    {
+        <tr>
+            <td>@texto</td>
+        </tr>
+    }
+</table>
+<input type="button" value="Aceptar" id="boton" />
