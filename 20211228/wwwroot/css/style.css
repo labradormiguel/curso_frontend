@@ -1,0 +1,59 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+    
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#botonInsertar, #botonEditar, #botonBorrar, #botonCancelar{
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 80px;
+}
+#botonInsertar {
+    background-color: #3fa159;
+}
+#botonEditar {
+    background-color: #e3b059;
+}
+#botonBorrar {
+    background-color: #c95430;
+}
+#botonCancelar {
+    margin-top: 10px;
+    background-color: #c95430;
+}
+.ins{
+    border: none;
+    outline: none;
+}
+
+#mitabla th:nth-last-child(-n+2){
+    text-align: center;
+    width: 5%;
+}
+
+#mitabla td:nth-last-child(-n+2){
+    text-align: center;
+}
+
+#mitabla th:not(:nth-last-child(-n+2)){
+    padding-left: 20px;
+}
+
+#mitabla td:not(:nth-last-child(-n+2)){
+    padding-left: 20px;
+}
+
+input[text]{
+    width: auto;
+}
+
+a:hover{
+    text-decoration: none;
+}
