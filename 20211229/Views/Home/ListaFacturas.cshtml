@@ -1,0 +1,238 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#formularioinsertar").hide();
+        $("#formularioeditar").hide();
+        buscarTodos();
+
+        $("#botonNuevo").click(function () {
+
+            $("#listado").hide();
+            $("#formularioinsertar").show();
+        })
+
+        $("#botonInsertar").click(function () {
+
+            var factura = {};
+            factura.numero = $("#numero").val();
+            factura.concepto = $("#concepto").val();
+            factura.importe = $("#importe").val();
+            //console.log(factura);
+
+            // muy manual con jquery y ajax para enviar datos al servidor en json
+            $.ajax({
+                url: "/api/facturas",
+                type: "POST",
+                data: JSON.stringify(factura),
+                contentType: "application/json; charset=utf-8",
+                error: function (response) {
+                    console.dir(response);
+                },
+                success: function (response) {
+
+
+                    $("#listado").show();
+                    $("#formularioinsertar").hide();
+                    $("#mitabla").empty();
+                    buscarTodos();
+                }
+            });
+
+
+
+
+
+        })
+    });
+
+    function borrar(numero) {
+
+        $.ajax({
+            url: "/api/facturas/" + numero,
+            type: "DELETE",
+            contentType: "application/json; charset=utf-8",
+            error: function (response) {
+                alert(response.responseText);
+            },
+            success: function (response) {
+
+                $("#mitabla").empty();
+                buscarTodos();
+            }
+
+        });
+
+    }
+
+    function editar(numero) {
+
+        $("#listado").hide();
+        $("#formularioeditar").show();
+
+        $.getJSON("/api/facturas/" + numero, function (factura) {
+
+            $("#numeroEditar").val(factura.numero);
+            $("#conceptoEditar").val(factura.concepto);
+            $("#importeEditar").val(factura.importe);
+
+        })
+
+    }
+
+    function detalle(numero) {
+
+        $.getJSON("/api/facturas/" + numero, function (factura) {
+
+            $("#listado").hide();
+            $("#detalle").show();
+
+            $("#detalle").empty().append(`
+            <p>${factura.numero}</p>
+            <p>${factura.concepto}</p>
+            <p>${factura.importe}</p>
+            <p><input type="button" value="volver" onclick="listado()" /></p>
+            `);
+
+        });
+
+
+    }
+
+    function listado() {
+        $("#listado").show();
+        $("#detalle").hide();
+    }
+
+    function salvar() {
+
+        let numero=$("#numeroEditar").val();
+        let factura={};
+
+        factura.numero=numero;
+        factura.concepto=$("#conceptoEditar").val();
+        factura.importe=$("#importeEditar").val();
+
+        console.log(factura.numero);
+        console.log(factura.concepto);
+        console.log(factura.importe);
+
+        $.ajax({
+            url: "/api/facturas/" + numero,
+            type: "PUT",
+            data: JSON.stringify(factura),
+            contentType: "application/json; charset=utf-8",
+            error: function (response) {
+                alert(response.responseText);
+            },
+            success: function (response) {
+
+                $("#mitabla").empty();
+                buscarTodos();
+                $("#listado").show();
+                $("#formularioeditar").hide();
+
+            }
+
+        });
+
+    }
+
+    function buscarTodos() {
+
+        $.getJSON("/api/facturas", function (datos) {
+
+            $("#mitabla").append(
+                `<tr>
+                    <th>Número</th>
+                    <th>Concepto</th>
+                    <th>Importe</th>
+                    <th>Borrar</th>
+                    <th>Detalle</th>
+                    <th>Editar</th>
+                </tr>`
+            )
+
+            for (let i = 0; i < datos.length; i++) {
+
+                $("#mitabla").append(
+                    `<tr>
+                        <td>${datos[i].numero}</td>
+                        <td>${datos[i].concepto}</td>
+                        <td>${datos[i].importe}</td>
+                        <td>
+                            <a href="" onclick="borrar(${datos[i].numero});return false;">❌</a>
+                        </td>
+                        <td>
+                            <a href="" onclick="detalle(${datos[i].numero});return false;">📂</a>
+                        </td>
+                        <td>
+                            <a href="" onclick="editar(${datos[i].numero});return false;">📂</a>
+                        </td>
+                    </tr>`);
+            }
+
+            $("#detalle").hide();
+        })
+
+    }
+
+
+</script>
+<div id="listado">
+    <table id="mitabla">
+
+    </table>
+    <p>
+        <input type="button" value="insertar" id="botonNuevo" />
+    </p>
+</div>
+<div id="formularioinsertar">
+    <form>
+
+        <p>
+            Numero<input type="text" name="numero" id="numero" />
+        </p>
+        <p>
+            Concepto<input type="text" name="concepto" id="concepto" />
+        </p>
+        <p>
+            Importe<input type="text" name="importe" id="importe" />
+        </p>
+        <p>
+            <input type="button" id="botonInsertar" value="aceptar" />
+        </p>
+    </form>
+</div>
+
+<div id="formularioeditar">
+    <form>
+
+        <p>
+            Numero<input type="text" name="numero" id="numeroEditar" disabled />
+        </p>
+        <p>
+            Concepto<input type="text" name="concepto" id="conceptoEditar" />
+        </p>
+        <p>
+            Importe<input type="text" name="importe" id="importeEditar" />
+        </p>
+        <p>
+            <input type="button" id="botonEditar" value="aceptar" onclick="salvar()" />
+        </p>
+    </form>
+</div>
+
+
+
+
+
+</div>
+<div id="detalle">
+
+    detalle
+
+</div>
